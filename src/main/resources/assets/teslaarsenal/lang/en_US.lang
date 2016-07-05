@@ -1,0 +1,22 @@
+
+
+
+item.teslaarsenal.itemteslasword.name=Tesla Energized Sword
+item.teslaarsenal.itemteslapickaxe.name=Tesla Energized Pickaxe
+item.teslaarsenal.itemteslashovel.name=Tesla Energized Shovel
+item.teslaarsenal.itemteslahoe.name=Tesla Energized Hoe
+item.teslaarsenal.itemteslaaxe.name=Tesla Energized Axe
+
+tooltip.teslaarsenal.itemteslasword.normal=Contains §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslapickaxe.normal=Contains §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslashovel.normal=Contains §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslahoe.normal=Contains §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslaaxe.normal=Contains §e%dT/§e%dT
+
+
+itemGroup.teslaarsenal=Tesla Arsenal
+
+
+
+tile.teslaarsenal.charger.name=Charger
+message.teslaarsenal.charger.status=The charger has %dT/%dT. Generating %dT per tick.
