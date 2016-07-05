@@ -11,8 +11,6 @@ import com.knoxhack.teslaarsenal.item.ItemTeslaSword;
 import com.knoxhack.teslaarsenal.tileentity.TileEntityCharger;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.init.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.Item.ToolMaterial;
@@ -46,7 +44,6 @@ public class TeslaArsenal {
 
 	public static ToolMaterial ModToolMaterial = net.minecraftforge.common.util.EnumHelper.addToolMaterial("ModToolMaterial", 3, 1000, 15.0F, 4.0F, 30);
 
-	private Enchantment unbreaking;
 
     
     
@@ -61,7 +58,7 @@ public class TeslaArsenal {
 
         blockCharger = registerBlock(new BlockCharger(), TileEntityCharger.class, "charger");
 
-        itemteslapickaxe = registerItem(new ItemTeslaPickaxe(ModToolMaterial, unbreaking), "itemteslapickaxe");
+       itemteslapickaxe = registerItem(new ItemTeslaPickaxe(ModToolMaterial), "itemteslapickaxe");
         itemteslashovel = registerItem(new ItemTeslaShovel(ModToolMaterial), "itemteslashovel");
         itemteslaaxe = registerItem(new ItemTeslaAxe(ModToolMaterial), "itemteslaaxe");
         itemteslasword = registerItem(new ItemTeslaSword(ModToolMaterial), "itemteslasword");

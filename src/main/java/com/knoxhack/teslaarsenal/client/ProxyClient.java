@@ -15,7 +15,7 @@ public class ProxyClient extends ProxyCommon {
       
 
         
-        ModelLoader.setCustomModelResourceLocation(TeslaArsenal.itemteslapickaxe, 0, new ModelResourceLocation(TeslaArsenal.itemteslapickaxe.getRegistryName(), "inventory"));
+      ModelLoader.setCustomModelResourceLocation(TeslaArsenal.itemteslapickaxe, 0, new ModelResourceLocation(TeslaArsenal.itemteslapickaxe.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(TeslaArsenal.itemteslashovel, 0, new ModelResourceLocation(TeslaArsenal.itemteslashovel.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(TeslaArsenal.itemteslasword, 0, new ModelResourceLocation(TeslaArsenal.itemteslasword.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(TeslaArsenal.itemteslaaxe, 0, new ModelResourceLocation(TeslaArsenal.itemteslaaxe.getRegistryName(), "inventory"));

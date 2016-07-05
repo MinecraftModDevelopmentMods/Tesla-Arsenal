@@ -7,16 +7,28 @@ item.teslaarsenal.itemteslashovel.name=Tesla Energized Shovel
 item.teslaarsenal.itemteslahoe.name=Tesla Energized Hoe
 item.teslaarsenal.itemteslaaxe.name=Tesla Energized Axe
 
-tooltip.teslaarsenal.itemteslasword.normal=Contains §e%dT/§e%dT
-tooltip.teslaarsenal.itemteslapickaxe.normal=Contains §e%dT/§e%dT
-tooltip.teslaarsenal.itemteslashovel.normal=Contains §e%dT/§e%dT
-tooltip.teslaarsenal.itemteslahoe.normal=Contains §e%dT/§e%dT
-tooltip.teslaarsenal.itemteslaaxe.normal=Contains §e%dT/§e%dT
 
+tooltip.teslaarsenal.itemteslapickaxe.normal=Contains §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslaaxe.normal=Contains §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslashovel.normal=Contains §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslasword.normal=Contains §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslahoe.normal=Contains §e%dT/§e%dT
 
 itemGroup.teslaarsenal=Tesla Arsenal
 
+label.teslaarsenal.itemteslaaxe=Contains §e%dT/§e%dT
 
+
+misc.teslaarsenal:energy_stored=%d / %d RS
 
 tile.teslaarsenal.charger.name=Charger
 message.teslaarsenal.charger.status=The charger has %dT/%dT. Generating %dT per tick.
+
+
+
+
+item.teslaarsenal.itemteslasword.name=Tesla Sword
+item.techreimagined.battery_creative.name=Creative Battery
+
+
+
