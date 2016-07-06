@@ -1,13 +1,13 @@
 package com.knoxhack.teslaarsenal.item;
 
 import java.util.List;
-
 import net.darkhax.tesla.api.implementation.BaseTeslaContainer;
 import net.darkhax.tesla.api.implementation.BaseTeslaContainerProvider;
 import net.darkhax.tesla.capability.TeslaCapabilities;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemAxe;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -16,38 +16,61 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.INBTSerializable;
 
 import com.knoxhack.teslaarsenal.TeslaArsenal;
-import net.minecraft.item.ItemPickaxe;
 
 
-public class ItemTeslaAxe extends ItemPickaxe {
+public class ItemTeslaAxe extends ItemAxe {
 
-	
 	
 
 
 
 
 
+	private EntityPlayer stack;
+	private float attackDamageempty = 0.0F;
+	private float attackDamagecharged = 8.0F;
 
 
 
 
 
+	private float attackDamage;
+	
+	
 
 	public ItemTeslaAxe(ToolMaterial material) {
 		super(material);
-		
-		
-	
+
         this.setCreativeTab(TeslaArsenal.tab);
         this.setUnlocalizedName("teslaarsenal.itemteslaaxe");
         this.setMaxStackSize(1);
-        
-        
-        
+        this.attackDamage = 3.0F + material.getDamageVsEntity();
         
 	}
     
+
+	   public float getDamageVsEntity() {
+        final BaseTeslaContainer container = (BaseTeslaContainer) stack.getCapability(TeslaCapabilities.CAPABILITY_HOLDER, EnumFacing.DOWN);
+        if(container.getStoredPower() > 0) {
+            return attackDamagecharged;
+
+        } else {
+            return this.toolMaterial.getDamageVsEntity();
+        }
+    }
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	   @Override
 	    public void addInformation (ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 	        

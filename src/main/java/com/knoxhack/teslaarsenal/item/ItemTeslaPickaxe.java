@@ -3,6 +3,8 @@ package com.knoxhack.teslaarsenal.item;
 import java.util.List;
 import net.darkhax.tesla.api.implementation.BaseTeslaContainer;
 import net.darkhax.tesla.capability.TeslaCapabilities;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -14,11 +16,13 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.INBTSerializable;
 import com.knoxhack.teslaarsenal.TeslaArsenal;
 import net.minecraft.item.ItemPickaxe;
+import net.minecraftforge.common.util.EnumHelper;
 
 
 public class ItemTeslaPickaxe extends ItemPickaxe {
 
-	
+
+
 	
 
 	public ItemTeslaPickaxe(ToolMaterial material) {
@@ -129,10 +133,10 @@ public class ItemTeslaPickaxe extends ItemPickaxe {
         
         
         
+
         
         
-        
-        
+
     
     
 }

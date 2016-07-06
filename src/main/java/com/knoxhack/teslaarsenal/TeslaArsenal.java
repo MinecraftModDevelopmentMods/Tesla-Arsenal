@@ -21,6 +21,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.common.util.EnumHelper;
 
 @Mod(modid = "teslaarsenal", name = "Tesla Arsenal", version = "1.0")
 public class TeslaArsenal {
@@ -42,7 +43,7 @@ public class TeslaArsenal {
     public static Item itemteslaaxe;
     public static Item itemteslahoe;
 
-	public static ToolMaterial ModToolMaterial = net.minecraftforge.common.util.EnumHelper.addToolMaterial("ModToolMaterial", 3, 1000, 15.0F, 4.0F, 30);
+	public static ToolMaterial ModToolMaterial = EnumHelper.addToolMaterial(null, 0, 0, 0, 0, 0);
 
 
     

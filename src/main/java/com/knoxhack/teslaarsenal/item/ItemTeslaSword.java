@@ -3,9 +3,12 @@ package com.knoxhack.teslaarsenal.item;
 import java.util.List;
 import net.darkhax.tesla.api.implementation.BaseTeslaContainer;
 import net.darkhax.tesla.capability.TeslaCapabilities;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -13,27 +16,66 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.INBTSerializable;
 import com.knoxhack.teslaarsenal.TeslaArsenal;
+
+import com.google.common.collect.Multimap;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.init.Blocks;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 
 
-public class ItemTeslaSword extends ItemPickaxe {
+public class ItemTeslaSword extends ItemSword {
 
 	
 	
+
+
+
+
+
+	private Item.ToolMaterial material3;
+	private EntityPlayer stack;
+	private float attackdamageempty = 0.0F;
+	private float attackDamagecharged = 0.8F;
+
+
 
 	public ItemTeslaSword(ToolMaterial material) {
 		super(material);
-		
-		
-	
+
         this.setCreativeTab(TeslaArsenal.tab);
         this.setUnlocalizedName("teslaarsenal.itemteslasword");
         this.setMaxStackSize(1);
-        
+
+
         
         
         
 	}
+	
+	public float getDamageVsEntity() {
+        final BaseTeslaContainer container = (BaseTeslaContainer) stack.getCapability(TeslaCapabilities.CAPABILITY_HOLDER, EnumFacing.DOWN);
+        if(container.getStoredPower() > 0) {
+            return attackDamagecharged;
+
+        } else {
+            return attackdamageempty;
+        }
+    }
+    	
+    	
     
 
     @Override
