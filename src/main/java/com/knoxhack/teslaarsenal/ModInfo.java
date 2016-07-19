@@ -2,7 +2,7 @@ package com.knoxhack.teslaarsenal;
 
 public class ModInfo {
     public static final String PACKAGE_NAME = "com.";
-    public static final String MOD_ID = "redstonearsenal";
+    public static final String MOD_ID = "teslaarsenal";
     public static final String MOD_NAME = "Tesla Arsenal";
     public static final String VERSION_BUILD = "1.0";
     public static final String MINECRAFT_VERSION = "@MCVERSION@";

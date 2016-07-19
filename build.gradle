@@ -21,11 +21,11 @@ plugins {
 }
 */
 version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+group= "com.knoxhack.teslaarsenal" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "TeslaArsenal-"
 
 minecraft {
-    version = "1.10.2-12.18.0.2007-1.10.0"
+    version = "1.10.2-12.18.1.2014"
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.
@@ -35,6 +35,18 @@ minecraft {
     // simply re-run your setup task after changing the mappings to update your workspace.
     mappings = "snapshot_20160518"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+}
+repositories {
+
+    maven {
+
+        url 'http://maven.epoxide.xyz'
+    }
+}
+
+dependencies {
+
+    compile "net.darkhax.tesla:Tesla:1.10-1.2.0.34"
 }
 
 dependencies {

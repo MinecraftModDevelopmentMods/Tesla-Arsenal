@@ -1,13 +1,26 @@
 package com.knoxhack.teslaarsenal.common;
 
 import com.knoxhack.teslaarsenal.TeslaArsenal;
+import com.knoxhack.teslaarsenal.crafting.ModCrafting;
+
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 public class ProxyCommon {
     
+	
+	
     public void preInit () {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(TeslaArsenal.blockCharger), 0, new ModelResourceLocation(TeslaArsenal.blockCharger.getRegistryName(), "inventory"));
+       // ModelLoader.setCustomModelResourceLocation(TeslaArsenal.itemteslapickaxe, 0, new ModelResourceLocation(TeslaArsenal.itemteslapickaxe.getRegistryName(), "inventory"));
     }
+
+
+
+    
+    
+    
+    
+    
+    
 }

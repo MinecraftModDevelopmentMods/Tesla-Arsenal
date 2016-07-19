@@ -1,5 +1,28 @@
 Changelog:
-Build 2007:
+Build 2014:
+	LexManos:
+		Added support for using static methods as event listeners, Register the
+		.class instead of an instance. And added an improvement to calltime
+		listener rebuilding.
+
+Build 1.10.2-12.18.1.2013:
+	cpw: Lets make a half-decent readme. Thanks to Rorax for the install video!
+
+Build 1.10.2-12.18.1.2012:
+	mezz: Add Forge fluid handler test
+
+Build 1.10.2-12.18.1.2011:
+	LexManos: Bump version for a RB
+
+Build 1.10.2-12.18.0.2010:
+	bernhard.bonigl:
+		Add an event that allows to modify the looting level based on damage
+		source
+
+Build 1.10.2-12.18.0.2009:
+	williewillus: Add throwable impact event (#3071)
+
+Build 1.10.2-12.18.0.2007-1.10.0:
 	LexManos:
 		Fix hopper extract behavior being broken on edge cases due to
 		IItemHandler capability. Closes #3062

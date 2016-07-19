@@ -15,6 +15,6 @@ public class CreativeTabTeslaArsenal extends CreativeTabs {
     @Override
     public Item getTabIconItem () {
         
-        return Item.getItemFromBlock(TeslaArsenal.blockCharger);
+        return TeslaArsenal.itemteslapickaxe;
     }
 }

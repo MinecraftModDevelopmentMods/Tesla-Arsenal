@@ -1,138 +1,57 @@
 package com.knoxhack.teslaarsenal.item;
+import com.google.common.collect.Sets;
+import com.knoxhack.teslaarsenal.ModInfo;
+import com.knoxhack.teslaarsenal.TeslaArsenalTeslaUtilities;
 
-import java.util.List;
-import net.darkhax.tesla.api.implementation.BaseTeslaContainer;
-import net.darkhax.tesla.capability.TeslaCapabilities;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumFacing;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.INBTSerializable;
-import com.knoxhack.teslaarsenal.TeslaArsenal;
-import net.minecraft.item.ItemPickaxe;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
+import java.util.Set;
+public class ItemTeslaHoe extends ItemTesla
+{
+    public long cost = 10;
+    public static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(new Block[] {Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE, Blocks.COBBLESTONE, Blocks.DETECTOR_RAIL, Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE, Blocks.DOUBLE_STONE_SLAB, Blocks.GOLDEN_RAIL, Blocks.GOLD_BLOCK, Blocks.GOLD_ORE, Blocks.ICE, Blocks.IRON_BLOCK, Blocks.IRON_ORE, Blocks.LAPIS_BLOCK, Blocks.LAPIS_ORE, Blocks.LIT_REDSTONE_ORE, Blocks.MOSSY_COBBLESTONE, Blocks.NETHERRACK, Blocks.PACKED_ICE, Blocks.RAIL, Blocks.REDSTONE_ORE, Blocks.SANDSTONE, Blocks.RED_SANDSTONE, Blocks.STONE, Blocks.STONE_SLAB, Blocks.STONE_BUTTON, Blocks.STONE_PRESSURE_PLATE});
 
-public class ItemTeslaHoe extends ItemPickaxe {
-
-	
-	
-
-	public ItemTeslaHoe(ToolMaterial material) {
-		super(material);
-		
-		
-	
-        this.setCreativeTab(TeslaArsenal.tab);
-        this.setUnlocalizedName("teslaarsenal.itemteslahoe");
-        this.setMaxStackSize(1);
-        
-        
-        
-        
-	}
-    
+    public ItemTeslaHoe()
+    {
+        super(0F, 0F, ToolMaterial.DIAMOND, EFFECTIVE_ON, 10000, 200, 200);
+        setUnlocalizedName("teslaarsenal.itemteslahoe");
+        setRegistryName("itemteslahoe");
+    }
 
     @Override
-    public int getDamage(ItemStack stack) {
-        if(stack.hasCapability(TeslaCapabilities.CAPABILITY_HOLDER,EnumFacing.DOWN))
-            return (int) stack.getCapability(TeslaCapabilities.CAPABILITY_HOLDER,EnumFacing.DOWN).getStoredPower();
+    public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving)
+    {
+    	TeslaArsenalTeslaUtilities.usePower(stack, cost);
+        return true;
+    }
+
+    @Override
+    public boolean canHarvestBlock(IBlockState state)
+    {
+        return Items.DIAMOND_HOE.canHarvestBlock(state);
+    }
+
+    @Override
+    public float getStrVsBlock(ItemStack stack, IBlockState state)
+    {
+        if (TeslaArsenalTeslaUtilities.getStoredPower(stack) < cost)
+        {
+            return 0.5F;
+        }
+        if (Items.WOODEN_HOE.getStrVsBlock(stack, state) > 1.0F )
+        {
+            return 5.5F;
+        }
         else
-            return super.getDamage(stack);
-    }
-	
-    @Override
-    public int getMaxDamage(ItemStack stack) {
-        if(stack.hasCapability(TeslaCapabilities.CAPABILITY_HOLDER,EnumFacing.DOWN))
-            return (int) stack.getCapability(TeslaCapabilities.CAPABILITY_HOLDER,EnumFacing.DOWN).getCapacity()+1;
-        else
-            return super.getMaxDamage(stack);
-    }
-    
-    
-    
-    
-    @Override
-    public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-        super.addInformation(stack, playerIn, tooltip, advanced);
-        final BaseTeslaContainer container = (BaseTeslaContainer) stack.getCapability(TeslaCapabilities.CAPABILITY_HOLDER, EnumFacing.DOWN);
-        
-        tooltip.add(I18n.format("tooltip.teslaarsenal.itemteslahoe.normal", container.getStoredPower(), container.getCapacity()));    }
-
-    
-    
-    @Override
-    public ICapabilityProvider initCapabilities(ItemStack stack, NBTTagCompound nbt) {
-        return new CapabilityProvider(stack);
-    }
-    
-    
-    
-    public static class CapabilityProvider implements INBTSerializable<NBTTagCompound>, ICapabilityProvider {
-        private BaseTeslaContainer container;
-
-        public CapabilityProvider(ItemStack stack) {
-
-            this.container = new BaseTeslaContainer(10000, 500, 500);
-        }
-
-        @Override
-        public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-
-
-            if (capability == TeslaCapabilities.CAPABILITY_HOLDER || capability == TeslaCapabilities.CAPABILITY_PRODUCER || capability == TeslaCapabilities.CAPABILITY_CONSUMER)
-                return true;
-            return false;
-        }
-    
-    
-    
-        @SuppressWarnings("unchecked")
-		@Override
-        public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-
-            if (capability == TeslaCapabilities.CAPABILITY_HOLDER || capability == TeslaCapabilities.CAPABILITY_PRODUCER || capability == TeslaCapabilities.CAPABILITY_CONSUMER)
-                return (T) container;
-            return null;
-        }
-    
-    
-        @Override
-        public NBTTagCompound serializeNBT() {
-
-
-            if (container != null) {
-                NBTTagCompound compound = new NBTTagCompound();
-                NBTBase data = container.serializeNBT();
-                if (data != null) {
-                    compound.setTag("TaContainer2", data);
-                }
-                return compound;
-            } else
-                return new NBTTagCompound();
-        }
-    
-    
-        
-        
-        @Override
-        public void deserializeNBT(NBTTagCompound nbt) {
-
-
-            if (container != null && nbt.hasKey("TaContainer3"))
-                this.container = new BaseTeslaContainer(nbt);
+        {
+            return super.getStrVsBlock(stack, state);
         }
     }
-        
-        
-        
-        
-        
-        
-        
-    
-    
 }
