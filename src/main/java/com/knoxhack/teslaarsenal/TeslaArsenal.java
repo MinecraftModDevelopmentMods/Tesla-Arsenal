@@ -15,6 +15,8 @@ import com.knoxhack.teslaarsenal.item.ItemTeslariumIngot;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -23,7 +25,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@Mod(modid = "teslaarsenal", name = "Tesla Arsenal", version = "1.0")
+@Mod(modid = "teslaarsenal", name = "Tesla Arsenal", version = "1.1")
 public class TeslaArsenal {
     
     @SidedProxy(serverSide = "com.knoxhack.teslaarsenal.common.ProxyCommon", clientSide = "com.knoxhack.teslaarsenal.client.ProxyClient")
@@ -34,6 +36,7 @@ public class TeslaArsenal {
     public static CreativeTabs tab;
     public static Item itemteslahoe,itemteslaaxe,itemteslashovel,itemteslapickaxe,itemteslasword, itemnetherstardust,itemteslariumdust,itemteslariumingot,itemironstick;
 	public static TeslaArsenal MODID;
+	ToolMaterial WOODTOOL;
 
     @EventHandler
     public void preInit (FMLPreInitializationEvent event) {
@@ -43,7 +46,11 @@ public class TeslaArsenal {
         itemteslaaxe = registerItem(new ItemTeslaAxe());
         itemteslashovel = registerItem(new ItemTeslaShovel());
         itemteslahoe = registerItem(new ItemTeslaHoe());
-        itemteslasword = registerItem(new ItemTeslaSword());
+        
+        
+        
+        
+        itemteslasword = registerItem(new ItemTeslaSword(WOODTOOL.DIAMOND));
         
         itemnetherstardust = registerItem(new ItemNetherStarDust());
         itemteslariumdust = registerItem(new ItemTeslariumDust());
