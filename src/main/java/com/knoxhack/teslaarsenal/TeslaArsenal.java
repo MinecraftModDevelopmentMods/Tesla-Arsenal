@@ -25,7 +25,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@Mod(modid = "teslaarsenal", name = "Tesla Arsenal", version = "1.1")
+@Mod(modid = "teslaarsenal", name = "Tesla Arsenal", version = "1.2")
 public class TeslaArsenal {
     
     @SidedProxy(serverSide = "com.knoxhack.teslaarsenal.common.ProxyCommon", clientSide = "com.knoxhack.teslaarsenal.client.ProxyClient")

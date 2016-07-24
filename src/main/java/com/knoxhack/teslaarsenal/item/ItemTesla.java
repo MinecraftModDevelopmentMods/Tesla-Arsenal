@@ -4,7 +4,7 @@ package com.knoxhack.teslaarsenal.item;
 import com.knoxhack.teslaarsenal.BaseTeslaArsenalTeslaContainerProvider;
 import com.knoxhack.teslaarsenal.TeslaArsenalTeslaUtilities;
 
-import net.darkhax.tesla.api.BaseTeslaContainer;
+import net.darkhax.tesla.api.implementation.BaseTeslaContainer;
 import net.minecraft.block.Block;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;

@@ -20,7 +20,7 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.1"
+version = "1.2"
 group= "com.knoxhack.teslaarsenal" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "TeslaArsenal"
 
@@ -46,7 +46,7 @@ repositories {
 
 dependencies {
 
-    compile "net.darkhax.tesla:Tesla:1.10-1.2.0.34"
+    compile "net.darkhax.tesla:Tesla:1.10.2-1.2.1.40"
 }
 
 dependencies {

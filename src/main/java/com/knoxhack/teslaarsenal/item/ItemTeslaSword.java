@@ -5,7 +5,6 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 import com.knoxhack.teslaarsenal.TeslaArsenalTeslaUtilities;
 
-import net.darkhax.tesla.api.BaseTeslaContainer;
 import net.darkhax.tesla.capability.TeslaCapabilities;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
