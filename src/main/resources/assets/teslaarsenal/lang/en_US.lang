@@ -7,12 +7,17 @@ item.teslaarsenal.itemteslashovel.name=Tesla Energized Shovel
 item.teslaarsenal.itemteslahoe.name=Tesla Energized Hoe
 item.teslaarsenal.itemteslaaxe.name=Tesla Energized Axe
 
+item.teslaarsenal.energizedarmour.helmet.name=Tesla Energized Helmet
+item.teslaarsenal.energizedarmour.chestplate.name=Tesla Energized Chestplate
+item.teslaarsenal.energizedarmour.leggings.name=Tesla Energized Leggings
+item.teslaarsenal.energizedarmour.boots.name=Tesla Energized Boots
+
 
 
 item.teslaarsenal.itemnetherstardust.name=Nether Star Dust
 item.teslaarsenal.itemteslariumdust.name=Teslarium Dust
 item.teslaarsenal.itemteslariumingot.name=Teslarium Ingot
-item.teslaarsenal.itemironstick.name=Iron Stick
+item.teslaarsenal.itemtoolhandle.name=Tool Handle
 
 
 tooltip.teslaarsenal.itemteslapickaxe.normal=Contains §e%dT/§e%dT

@@ -1,45 +1,49 @@
 package com.knoxhack.teslaarsenal.item;
 
+import java.util.List;
 
 import com.knoxhack.teslaarsenal.BaseTeslaArsenalTeslaContainerProvider;
 import com.knoxhack.teslaarsenal.TeslaArsenalTeslaUtilities;
 
 import net.darkhax.tesla.api.implementation.BaseTeslaContainer;
-import net.minecraft.block.Block;
-import net.minecraft.client.resources.I18n;
+import net.darkhax.tesla.lib.TeslaUtils;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import java.util.List;
-import java.util.Set;
-import net.darkhax.tesla.lib.TeslaUtils;
 
+public class ItemTeslaArmor extends ItemArmor {
 
-
-
-
-
-
-
-
-public class ItemTesla extends ItemBase
-{
 	private long maxCapacity;
 	private long output;
 	private long input;
-
-	public ItemTesla(float f, float g, ToolMaterial diamond, Set<Block> effectiveOn, long maxCapacity, long input, long output)
-	{
+	
+	
+	
+	public ItemTeslaArmor(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, long maxCapacity, long input, long output) {
+		super(materialIn, renderIndexIn, equipmentSlotIn);
 		setMaxStackSize(1);
 		this.maxCapacity = maxCapacity;
 		this.output = output;
 		this.input = input;
+		
+		
+		
+		
+		
+		// TODO Auto-generated constructor stub
 	}
 
+	@Override public boolean isRepairable()
+	{
+		return false;
+	}
+	
+	
 	@Override public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems)
 	{
 		ItemStack powered = TeslaArsenalTeslaUtilities.createChargedStack(new ItemStack(itemIn));
@@ -47,12 +51,9 @@ public class ItemTesla extends ItemBase
 		subItems.add(powered);
 		subItems.add(unpowered);
 	}
-
-	@Override public boolean isRepairable()
-	{
-		return false;
-	}
-
+	
+	
+	
 	@Override public double getDurabilityForDisplay(ItemStack stack)
 	{
 		return (1 - (double) TeslaArsenalTeslaUtilities.getStoredPower(stack) / (double) TeslaArsenalTeslaUtilities.getMaxCapacity(stack));
@@ -68,10 +69,21 @@ public class ItemTesla extends ItemBase
         
         TeslaUtils.createTooltip(stack, tooltip);
     }
-    
-    
+	
 	@Override public ICapabilityProvider initCapabilities(ItemStack stack, NBTTagCompound nbt)
 	{
 		return new BaseTeslaArsenalTeslaContainerProvider(new BaseTeslaContainer(), maxCapacity, output, input);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
