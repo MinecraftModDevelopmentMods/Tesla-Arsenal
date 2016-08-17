@@ -3,16 +3,7 @@ package com.knoxhack.teslaarsenal;
 import com.knoxhack.teslaarsenal.common.ProxyCommon;
 import com.knoxhack.teslaarsenal.crafting.ModCrafting;
 import com.knoxhack.teslaarsenal.creativetab.CreativeTabTeslaArsenal;
-import com.knoxhack.teslaarsenal.item.ItemNetherStarDust;
-import com.knoxhack.teslaarsenal.item.ItemTeslaAxe;
-import com.knoxhack.teslaarsenal.item.ItemTeslaEnergizedArmor;
-import com.knoxhack.teslaarsenal.item.ItemTeslaHoe;
-import com.knoxhack.teslaarsenal.item.ItemTeslaPickaxe;
-import com.knoxhack.teslaarsenal.item.ItemTeslaShovel;
-import com.knoxhack.teslaarsenal.item.ItemTeslaSword;
-import com.knoxhack.teslaarsenal.item.ItemTeslariumDust;
-import com.knoxhack.teslaarsenal.item.ItemTeslariumIngot;
-import com.knoxhack.teslaarsenal.item.ItemToolHandle;
+import com.knoxhack.teslaarsenal.item.*;
 
 import net.minecraft.item.ItemArmor;
 import net.minecraft.creativetab.CreativeTabs;
@@ -39,7 +30,7 @@ public class TeslaArsenal {
     @Mod.Instance("teslaarsenal")
     public static TeslaArsenal instance;
     public static CreativeTabs tab;
-    public static Item itemteslahoe,itemteslaaxe,itemteslashovel,itemteslapickaxe,itemteslasword, itemnetherstardust,itemteslariumdust,itemteslariumingot,itemtoolhandle;
+    public static Item itemteslawrench,itemteslahoe,itemteslaaxe,itemteslashovel,itemteslapickaxe,itemteslasword, itemnetherstardust,itemteslariumdust,itemteslariumingot,itemtoolhandle;
 	public static TeslaArsenal MODID;
 	ToolMaterial WOODTOOL;
 	
@@ -67,7 +58,8 @@ public class TeslaArsenal {
         itemteslariumdust = registerItem(new ItemTeslariumDust());
         itemteslariumingot = registerItem(new ItemTeslariumIngot());
         itemtoolhandle = registerItem(new ItemToolHandle());
-        
+        itemteslawrench = registerItem(new ItemToolWrench());
+
         
         
         energizedArmorHelmet = new ItemTeslaEnergizedArmor(ItemArmor.ArmorMaterial.DIAMOND, EntityEquipmentSlot.HEAD, 10000, 200,
