@@ -21,7 +21,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 
 
 
-@Mod(modid = "teslaarsenal", name = "Tesla Arsenal", version = "1.4", updateJSON = "https://raw.githubusercontent.com/nfinit-gaming/Nether-Metals/master/update.json")
+@Mod(modid = "teslaarsenal", name = "Tesla Arsenal", version = "1.4", updateJSON = "https://raw.githubusercontent.com/knoxhack/Tesla-Arsenal/master/update.json")
 public class TeslaArsenal {
     
     @SidedProxy(serverSide = "com.knoxhack.teslaarsenal.common.ProxyCommon", clientSide = "com.knoxhack.teslaarsenal.client.ProxyClient")
