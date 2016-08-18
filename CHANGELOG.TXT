@@ -1,0 +1,3 @@
+Brand New Testures Thanks to TheCodedOne
+Added Forge Updater Checker Support
+Fixed mcmod.info file for MultiMC Support
