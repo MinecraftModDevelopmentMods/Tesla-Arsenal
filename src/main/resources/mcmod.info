@@ -1,13 +1,13 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "teslaarsenal",
+  "name": "Tesla Arsenal",
+  "description": "Tesla Arsenal adds tools and weapons that use the energy of Tesla, the energy system added by the Tesla API.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "http://minecraft.curseforge.com/projects/tesla-arsenal",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
+  "authorList": ["koxhack"],
   "credits": "The Forge and FML guys, for making this example",
   "logoFile": "",
   "screenshots": [],
