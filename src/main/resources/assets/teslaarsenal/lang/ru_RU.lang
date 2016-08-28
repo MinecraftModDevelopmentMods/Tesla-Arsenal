@@ -1,0 +1,48 @@
+
+
+
+item.teslaarsenal.itemteslasword.name=Тесла Энергетический Меч
+item.teslaarsenal.itemteslapickaxe.name=Тесла Энергетическая Кирка
+item.teslaarsenal.itemteslashovel.name=Тесла Энергетическая Лопата
+item.teslaarsenal.itemteslahoe.name=Тесла Энергетическая Мотыга
+item.teslaarsenal.itemteslaaxe.name=Тесла Энергетический Топор
+item.teslaarsenal.itemteslawrench.name=Ключ(WIP)
+
+
+item.teslaarsenal.energizedarmour.helmet.name=Тесла Энергетический Шлем
+item.teslaarsenal.energizedarmour.chestplate.name=Тесла Энергетический Нагрудник
+item.teslaarsenal.energizedarmour.leggings.name=Тесла Энергетические Штаны
+item.teslaarsenal.energizedarmour.boots.name=Тесла Энергетические Ботинки
+
+
+
+item.teslaarsenal.itemnetherstardust.name=Пыль адской звезды
+item.teslaarsenal.itemteslariumdust.name=Теслариум Пыль
+item.teslaarsenal.itemteslariumingot.name=Теслариум Слиток
+item.teslaarsenal.itemtoolhandle.name=Рукоятка Инструмента
+
+
+tooltip.teslaarsenal.itemteslapickaxe.normal=Содержит §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslaaxe.normal=Содержит §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslashovel.normal=Содержит §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslasword.normal=Содержит §e%dT/§e%dT
+tooltip.teslaarsenal.itemteslahoe.normal=Содержит §e%dT/§e%dT
+
+itemGroup.teslaarsenal=Тесла Арсенал
+
+label.teslaarsenal.itemteslaaxe=Содержит §e%dT/§e%dT
+
+
+misc.teslaarsenal:energy_stored=%d / %d RS
+
+tile.teslaarsenal.charger.name=Зарядник
+message.teslaarsenal.charger.status=Зарядник имеет %dT/%dT. Генерируется %dT в тик.
+
+
+
+
+item.teslaarsenal.itemteslasword.name=Тесла Меч
+item.techreimagined.battery_creative.name=Креативный аккумулятор
+
+
+
