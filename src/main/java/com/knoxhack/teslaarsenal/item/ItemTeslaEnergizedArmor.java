@@ -3,9 +3,13 @@ package com.knoxhack.teslaarsenal.item;
 import com.knoxhack.teslaarsenal.TeslaArsenal;
 import com.knoxhack.teslaarsenal.TeslaArsenalTeslaUtilities;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.world.World;
 
 public class ItemTeslaEnergizedArmor extends ItemTeslaArmor {
 	
@@ -47,7 +51,37 @@ public class ItemTeslaEnergizedArmor extends ItemTeslaArmor {
     }
 	
 	
-	
+    @Override
+    public void onArmorTick(World world, EntityPlayer player,ItemStack stack ){
+    		if (TeslaArsenalTeslaUtilities.getStoredPower(stack) > cost)
+    		if (stack.getItem()== TeslaArsenal.energizedArmorChestplate){
+    		  if (world.isRemote) {
+    			  if (Minecraft.getMinecraft().gameSettings.keyBindJump.isKeyDown()){
+    				  player.motionY += 0.1;
+    				  player.motionY = Math.min(( player.motionY), (1));
+    				  
+    				  player.motionY *= 1.1;
+    				  player.motionY = Math.min(( player.motionX), (1));
+    				  
+    				  player.motionY *= 1.1;
+    				  player.motionY = Math.min(( player.motionZ), (1));
+    				      			  
+    				  world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, player.posX, player.posY, player.posZ, 0, 0, 0, 0);
+
+    			  
+    			  }
+    		  }   else {
+    			  player.fallDistance = -(float)player.motionY * 4;
+    		  }
+    	
+    		
+    		}
+    }
+    		
+    		
+    
+    
+    
 	
 	
 	
