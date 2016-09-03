@@ -67,6 +67,15 @@ dependencies {
     compile "net.darkhax.tesla:Tesla:1.10.2-1.2.1.46"
 }
 
+
+
+
+dependencies {
+    compile files(
+        'libs/Modularity-[1.10.2]-0.1.0-pre-release-10',
+    )
+}
+
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
