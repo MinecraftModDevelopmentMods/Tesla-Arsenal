@@ -1,6 +1,7 @@
 package com.knoxhack.teslaarsenal.crafting;
 
 import com.knoxhack.teslaarsenal.TeslaArsenal;
+import com.knoxhack.teslaarsenal.item.BMItems;
 
 import dank.modularity.framework.common.init.FrameworkContent;
 import net.minecraft.init.Items;
@@ -26,6 +27,13 @@ public final class ModCrafting {
 			GameRegistry.addShapelessRecipe(new ItemStack(TeslaArsenal.itemteslariumdust , 1), new Object[] {TeslaArsenal.itemnetherstardust, Items.ENDER_PEARL});
 			}
 		
+		if(Loader.isModLoaded("basemetals")) {
+			GameRegistry.addShapelessRecipe(new ItemStack(TeslaArsenal.itemteslariumdust , 1), new Object[] { new ItemStack(BMItems.platinum_powder,1), new ItemStack(BMItems.invar_powder , 1), new ItemStack(BMItems.electrum_powder , 1), new ItemStack(Items.ENDER_PEARL , 1), new ItemStack(BMItems.tin_powder , 1), new ItemStack(BMItems.tin_powder , 1), new ItemStack(BMItems.silver_powder, 1), new ItemStack(BMItems.platinum_powder, 1)});
+			GameRegistry.addShapelessRecipe(new ItemStack(FrameworkContent.resourceDust, 1 , 12), new Object[] { new ItemStack(BMItems.tin_powder, 1), new ItemStack(BMItems.tin_powder , 1) , new ItemStack(BMItems.silver_powder, 1), new ItemStack(BMItems.platinum_powder, 1),Items.ENDER_PEARL});
+
+		
+		
+		}
 		
 		GameRegistry.addRecipe(new ItemStack(TeslaArsenal.itemteslapickaxe, 1), new Object[] {"###", " I ", " I ", '#', TeslaArsenal.itemteslariumingot, 'I',TeslaArsenal.itemtoolhandle});
 		GameRegistry.addRecipe(new ItemStack(TeslaArsenal.itemteslaaxe, 1), new Object[] {"## ", "#I ", " I ", '#', TeslaArsenal.itemteslariumingot, 'I',TeslaArsenal.itemtoolhandle});
