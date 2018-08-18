@@ -32,8 +32,6 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-
-
 version = "1.5"
 group= "com.knoxhack.teslaarsenal" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "TeslaArsenal"
@@ -51,53 +49,19 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 repositories {
-
     maven {
-
         url 'https://maven.mcmoddev.com'
     }
 }
 
 dependencies {
-
-    compile "net.darkhax.tesla:Tesla:1.10.2-1.2.1.46"
-}
-
-
-
-
-dependencies {
+    compile "net.darkhax.tesla:Tesla:1.10.2-1.2.1.+"
     compile files(
         'libs/Modularity-[1.10.2]-0.1.0-pre-release-10',
     )
 }
 
-dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // the 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    //provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // the deobf configurations:  'deobfCompile' and 'deobfProvided' are the same as the normal compile and provided,
-    // except that these dependencies get remapped to your current MCP mappings
-    //deobfCompile 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-    //deobfProvided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
-}
-
-processResources
-{
+processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
@@ -116,7 +80,6 @@ processResources
     }
 }
 
-
 curseforge {
 	project {
 		apiKey = 'b174f320-c84d-4dbd-afe3-b396be04857b' // Curse API Key goes here, DO NOT COMMIT IT TO REPO.
@@ -133,4 +96,3 @@ curseforge {
 		}
 	}
 }
-
