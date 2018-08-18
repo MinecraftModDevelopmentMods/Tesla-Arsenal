@@ -72,27 +72,13 @@ public class ItemTeslaSword extends ItemTesla
 
         if (equipmentSlot == EntityEquipmentSlot.MAINHAND)
         {
-            multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getAttributeUnlocalizedName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", (double)this.attackDamage, 0));
-            multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getAttributeUnlocalizedName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", -2.4000000953674316D, 0));
+            multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", (double)this.attackDamage, 0));
+            multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", -2.4000000953674316D, 0));
         }
 
         return multimap;
     }
 
-    	 
-    	 
-    	 
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
 	@Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving)
     {
@@ -122,23 +108,4 @@ public class ItemTeslaSword extends ItemTesla
             return super.getStrVsBlock(stack, state);
         }
     }
-    
-
-
-
-     
-     
-     
-	
-     
-     
-     
-
-    
-    
-     
- 
-
-    
-    
 }
